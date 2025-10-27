@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*FreeCodeCamp Leap Year Checker
+        This code creates a function which has a year parameter that when a year is entered in the year variable, it checks to see if that year is a leap year or not and prints it to the console.
+        */
+        let year = 2000;
+
+        function isLeapYear(yearToCheck){
+        if((yearToCheck % 4) === 0){
+            if(yearToCheck % 100 !== 0 || yearToCheck % 400 === 0){
+            return `${yearToCheck} is a leap year.`
+            }
+            else {
+            return `${yearToCheck} is not a leap year.`
+            }
+        }
+        else {
+            return `${yearToCheck} is not a leap year.`
+        }
+        }
+
+        let result = isLeapYear(year);
+        console.log(result)
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+#container{
+  background: #3b3b5f;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+}
+
+#pad-bank{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.drum-pad{
+      background: #444;
+      color: white;
+      border-radius: 7px;
+      padding: 25px;
+      font-size: 20px;
+      border: none;
+}
+
+#display{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 40px;
+  width: 100%;
+  background: #444;
+  color: white;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+      background: #ffaa33;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px     #ffaa33;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(36px);
+  -ms-transform: translateX(36px);
+  transform: translateX(34px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#power-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+#bankmode-container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider1 {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 5px; /* Specified height */
+  background: #ffaa33; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  border-radius: 20px;
+}
+
+/* Mouse-over effects */
+.slider1:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider1::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: #fff; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+}
+
+.slider1::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #ffaa33;
+  border-radius: 50%;
+   /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+#display{
+  font-size: 22px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+
+}

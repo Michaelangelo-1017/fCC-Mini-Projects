@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Elements styling*/
+body{
+  background-color: #32c852;
+  width: 100%;
+  min-height: 100vh;
+  font-size: 1.25em;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 8px;
+}
+
+hr{
+  margin: 20px 0;
+}
+
+/*id stylings*/
+#selection-container{
+  min-width: 100%;
+  max-width: 700px;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6cd488;
+  padding: 15px;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+}
+
+#selection-title{
+  font-size: 1em;
+  font-weight: 500;
+}
+
+#selection-title::first-letter{
+  font-size: 1.25em;
+}
+
+#get-weather-btn{
+  width: 150px;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 1.05em;
+}
+
+#cities-select{
+  height: 45px;
+  font-size: 1em;
+  text-align: center;
+}
+
+#weather-info-container{
+  min-width: 100%;
+  max-width: 700px;
+  min-height: 40vh;
+  background-color: #eee;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+  padding: 20px 0;
+  text-align: center;
+}
+
+#compass-arrow {
+    width: 4px;
+    height: 70px;
+    top: 15%;
+    position: absolute;
+    background-color: black;
+}
+
+
+/*Class stylings*/
+.display-containers{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.rows{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.secondary-info-bottom-right {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+}
+
+.arrow-head {
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-left-color: black;
+    position: absolute;
+    top: -15%;
+    left: -6px;
+    transform: rotate(-90deg);
+}
+
+.compass-direction {
+    position: absolute;
+    background-color: black;
+}
+
+.north{
+  top: -8px;
+}
+
+.south{
+  bottom: -8px;
+}
+
+.east{
+  left: -6px;
+}
+
+.west{
+  right: -6px;
+}
+.north, .south{
+  width: 3px;
+  height: 8px;
+  left: 50%;
+}
+
+.east, .west{
+  width: 3px;
+  height: 8px;
+  top: 50%;
+  transform: rotate(90deg);
+}
+
+.bottom-row{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.wind-row{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

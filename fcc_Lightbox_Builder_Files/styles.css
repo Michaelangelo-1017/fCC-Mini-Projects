@@ -1,0 +1,63 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-family: Helvetica, Arial;
+  text-align: center;
+  background-color: rgb(211, 221, 224);
+}
+
+.gallery{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  flex-wrap: wrap;
+  
+}
+
+.gallery-item{
+  height: 300px;
+  width: 250px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery-item:hover{
+  transform: scale(1.05);
+}
+
+.lightbox{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0,0,0,0.7);
+  padding: 20px;
+} 
+
+#close-btn{
+    color: white;
+    font-size: 24px;
+    background: none;
+    border: none;
+    height: 50px;
+    width: 50px;
+    left: 100%;
+}
+
+#lightbox-image{
+    object-fit: cover;
+    width: 60%;
+    height: 60%;
+}

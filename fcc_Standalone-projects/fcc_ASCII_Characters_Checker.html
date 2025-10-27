@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*This code below checks the ASCII value for the letters(string) in the letter array*/
+        /*let letter = ["a", 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm','n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        for (let i = 0; i<62; i++){
+            let alphabet = letter[i];
+            console.log(alphabet.charCodeAt(0));
+        }*/
+
+        /*This code below creates an empty array firstly, then using a for loop it gives the ASCII character for the numerical value of each count. The "fromCharCode" converts the value of count (e.g 0,1,2,3...) into the corresponding ASCII character and the next line of code pushes that character into the ascii_characters array*/
+        let ascii_characters = [];
+        for (let count = 0; count<129; count++){
+            let character = String.fromCharCode(count);
+            ascii_characters.push(character);
+        }
+        console.log(ascii_characters);
+        
+        let phrase = "JavaScript is fun"
+        let word = "u"
+        let index = ((phrase.length - 1) - 0)/2
+        console.log(`The length of the string \"${phrase}\" is ` + phrase.length+ "." + " The index of the last character in the string is " + (phrase.length - 1) + "." + " The index of the middle character would be half of the index of the last character which is " + index + ".");
+        let slicedWord = phrase.slice(index);
+        console.log(phrase.includes(word, 7));
+        console.log(phrase.slice(0, -1));
+        console.log(slicedWord);
+        console.log(phrase);
+        console.log(phrase.includes(slicedWord));
+
+
+    </script>
+</body>
+</html>

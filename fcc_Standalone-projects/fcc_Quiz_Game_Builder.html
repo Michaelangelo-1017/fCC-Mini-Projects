@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*FreeCodeCamp Build a Quiz Game Lab
+        This code creates a questions array with 5 objects which have 4 keys(category, question, choices and answer) each, it gets a question from the object using a function, it gets a random choice from that question object and it checks if the chosen choice matches the answer for that object it prints a message and prints a different message if it doesn't match
+        */
+
+        /*This is the questions array, it contains 5 values which are objects that have 4 keys each, the category of the question, the question itself, an array for the choices that could be picked by the computer and the answer to the question*/
+        const questions = [
+        {
+            category: "Mathematics",
+            question: "What is the product of 72 and 5?",
+            choices: ["300","160","360"],
+            answer: "360"
+        },
+        {
+            category: "Computer Science",
+            question: "Which of the following is an input device?",
+            choices: ["Mouse","Monitor","Printer"],
+            answer: "Mouse"
+        },
+        {
+            category: "Chemistry",
+            question: "What is the other name for Group 1 elements?",
+            choices: ["Alkaline-Earth Metals","Alkali Metals","Halogens"],
+            answer: "Alkali Metals"
+        },
+        {
+            category: "Physics",
+            question: "What is current measured in?",
+            choices: ["Amperes","Newton","Volts"],
+            answer: "Amperes"
+        },
+        {
+            category: "Biology",
+            question: "Which of the following organelle is known as the powerhouse of the cell?",
+            choices: ["Nucleus","Chloroplast","Mitochondria"],
+            answer: "Mitochondria"
+        }
+        ];
+
+        /*This function accepts an array as its parameter, it then picks one of the 5 possible values of the array at random which would have the question to be asked, the choices and the answer to the question*/
+        function getRandomQuestion(array){
+            let randomQuestion = array[Math.round(Math.random() * ((array.length -1) - 0) + 0)];
+            return randomQuestion;  
+        }
+
+        const chosenQuestion = getRandomQuestion(questions); /*This stores the value returned from the getRandomQuestion function to be used later*/
+
+        const indexOfQuestion = questions.indexOf(chosenQuestion); /*This get the index of the question object in the array and stores it*/
+        console.log(indexOfQuestion)  
+
+        /*This function accepts the choices array for the question object that was picked earlier as its parameter, it then picks a random choice from that array as the computer's choice*/
+        function getRandomComputerChoice(array){
+            const randomChoice = Math.round(Math.random() * (array.length - 1) - 0);            
+            return array[randomChoice];  
+        }
+
+        const choices = questions[indexOfQuestion].choices; //This stores the choices array for the questions object picked to be used later
+        const chosenChoice = getRandomComputerChoice(choices); //This stores the choice picked by the computer  
+
+        //This function takes two parameters, the choice the computer picked and the question object that was picked earlier, it then checks if the choice the computer picked and the answer of the questions object picked are the same and prints a message if they are the same or not
+        function getResults(questionPicked,choicePicked){
+            if (choicePicked === questionPicked.answer){
+                console.log("The computer's choice is " + choicePicked);
+                console.log("The answer in the array is " + questionPicked.answer);
+                return "The computer's choice is correct!";
+            }
+            else{
+                console.log("The computer's choice is " + choicePicked);
+                console.log("The answer in the array is " + questionPicked.answer);           
+                return "The computer's choice is wrong. The correct answer is: " + questionPicked.answer;
+            }
+        }
+        console.log(getRandomQuestion(questions))  
+        console.log(chosenQuestion)
+        console.log(getRandomComputerChoice(questions)) 
+        console.log(getResults(chosenQuestion, chosenChoice)); 
+    </script>
+</body>
+</html>

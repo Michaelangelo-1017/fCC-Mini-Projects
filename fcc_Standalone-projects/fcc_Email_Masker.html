@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*FreeCodeCamp Email Masker Lab, this code allow you to mask any email by replacing the characters between the first letter and last letter of the email name with asterisk*/
+        function maskEmail(email){
+        let isThereAnAt = email.includes("@");
+        let isThereDomain = email.includes(".com");
+        let atIndexAt = email.indexOf("@");
+        let atIndexCom = email.indexOf(".com");
+        let checkSpaceBetween = atIndexCom - atIndexAt;
+        if (isThereAnAt && isThereDomain &&checkSpaceBetween > 5){
+            
+        let emailName = email.slice(0,atIndexAt);
+        let numberOfCharacters = (emailName.length - 1);
+        let otherCharacters = emailName.slice(1,numberOfCharacters)
+        let maskedName = emailName.replace(otherCharacters,"*".repeat(otherCharacters.length));
+        let maskedEmail = maskedName + email.slice(atIndexAt, email.length);
+        return maskedEmail;
+        } else{
+            return "There is either no @ or .com in this email so your email is invalid"
+        }
+        }
+        
+        let email = window.prompt("Please enter an email address");
+        document.write(maskEmail(email));
+    </script>
+</body>
+</html>
